@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="https://open.spotify.com/track/72DL0kjCGfA4qIDQnR88hT180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
@@ -17,7 +17,6 @@
       name="keywords"
       content="JavaScript Todos List App, Task Management, To-Do List Web App, Organize Tasks, Track To-Dos, Simple Task Manager, Productivity Tool, User-Friendly Interface, Web-based Task Organizer, JavaScript Task Tracker"
     />
-
     <script>
       window.onload = function () {
         const loggedInUser = localStorage.getItem('loggedInUser');
@@ -102,6 +101,36 @@
                 </span>
                 <p>Buy a new car lorem</p>
               </label>
+              <div class="edit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
+                <div class="edit-task-container">
+                  <h2>Edit Task</h2>
+                  <div class="input-group">
+                    <label for="edit-task-input">Task</label>
+                    <input type="text" id="edit-task-input" value="${task.task}">
+                  </div>
+                  <div class="input-group">
+                    <label for="edit-category-select">Category</label>
+                    <select id="edit-category-select">
+                      ${categories.map(category => `
+                        <option value="${category.title.toLowerCase()}" ${category.title.toLowerCase() === task.category.toLowerCase() ? 'selected' : ''}>
+                          ${category.title}
+                        </option>
+                      `).join('')}
+                    </select>
+                  </div>
+                  <div class="btns">
+                    <button class="cancel-btn" onclick="closeEditTaskModal()">Cancel</button>
+                    <button class="save-btn" onclick="saveEditedTask()">Save</button>
+                  </div>
+                </div>
+              </div>
               <div class="delete">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path
@@ -138,7 +167,6 @@
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

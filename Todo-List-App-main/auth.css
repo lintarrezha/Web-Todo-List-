@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e2e2e;
+    font-family: 'Inter', sans-serif;
+    background-color: #202020;
+  }
+  
+  .wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    display: flex;
+  }
+  
+  @media (min-width: 768px) {
+    .wrapper {
+      height: 50rem;
+      width: 25rem;
+      border-radius: 40px;
+      border: 10px solid #323232;
+    }
+  }
+  
+  .wrapper .screen {
+    min-width: 100%;
+    flex: 1;
+    transition: all 0.3s;
+  }
+  
+
+.screen-backdrop-auth {
+    width: 135%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(to bottom, rgba(38, 113, 253, 0.5), rgb(254, 254, 254));
+    z-index: -2;
+  }
+  #login-form,
+  #register-form {
+    max-width: 300px;
+    margin: 200px auto;
+    margin-left: 40px;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #login-form h2,
+  #register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+  }
+  
+  #login-form input,
+  #register-form input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  
+  #login-form button,
+  #register-form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: #39a6f0;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #login-form button:hover,
+  #register-form button:hover {
+    background-color: #0011fbb9;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 9.9px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    #login-form,
+    #register-form {
+      max-width: 90%;
+      padding: 20px;
+    }
+  }

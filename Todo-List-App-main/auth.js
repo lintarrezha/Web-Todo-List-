@@ -24,7 +24,7 @@ function login() {
   if (storedPassword === password) {
     alert('Login berhasil!');
     localStorage.setItem('loggedInUser', username); // Menyimpan status login
-    window.location.href = 'index.html'; // Alihkan ke halaman utama
+    window.location.href = 'index.html';
   } else {
     alert('Username atau password salah!');
   }
@@ -34,6 +34,6 @@ function login() {
 window.onload = function () {
   const loggedInUser = localStorage.getItem('loggedInUser');
   if (loggedInUser) {
-    window.location.href = 'index.html'; // Jika sudah login, alihkan ke halaman utama
+    window.location.href = 'index.html';
   }
 };
